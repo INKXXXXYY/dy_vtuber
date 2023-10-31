@@ -1,0 +1,35 @@
+{
+    "triggers": [
+      {
+        "word": "闺蜜",
+        "text": "好了是闺蜜。",
+        "audioUrl":"wav\\trigger\\1.wav"
+      },
+      {
+        "word": "敌蜜",
+        "text": "好了是闺蜜。",
+        "audioUrl":"wav\\trigger\\1.wav"
+      },
+      {
+        "word": "拱",
+        "text": "拱出去。",
+        "audioUrl":"wav\\trigger\\3.wav"
+      },
+      {
+        "word": "dou书",
+        "text": "读书的女人最美丽，读书的女人最优秀，读书的女人最通情达理。",
+        "audioUrl":"wav\\trigger\\4.wav"
+      },
+      {
+        "word": "笑拥了",
+        "text": "你真是把人笑拥了。",
+        "audioUrl":"wav\\trigger\\5.wav"
+      },
+      {
+        "word": "lonely",
+        "text": "这是一个伦理的问题。",
+        "audioUrl":"wav\\trigger\\6.wav"
+      }
+    ]
+  }
+  
