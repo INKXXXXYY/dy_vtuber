@@ -36,8 +36,8 @@ def warm_up_worker():
 
 
 # 启动暖场工作线程
-warm_up_thread = threading.Thread(target=warm_up_worker)
-warm_up_thread.start()
+# warm_up_thread = threading.Thread(target=warm_up_worker)
+# warm_up_thread.start()
 
 # 播放音频的函数
 def play_fixed_audio_periodically():
@@ -66,8 +66,8 @@ def play_fixed_audio_periodically():
 
 
 # 创建并启动线程
-audio_thread = threading.Thread(target=play_fixed_audio_periodically)
-audio_thread.start()
+# audio_thread = threading.Thread(target=play_fixed_audio_periodically)
+# audio_thread.start()
 
 
 def play_geng_fixed_audio_periodically():
@@ -94,8 +94,8 @@ def play_geng_fixed_audio_periodically():
 
 
 # 创建并启动线程
-audio_thread = threading.Thread(target=play_geng_fixed_audio_periodically)
-audio_thread.start()
+# audio_thread = threading.Thread(target=play_geng_fixed_audio_periodically)
+# audio_thread.start()
 
 def worker():
     """从队列中获取并处理消息的工作线程函数。"""
@@ -136,24 +136,26 @@ def handle_message(message):
 
         # 检查 'Type' 是否为 3（进入直播间）
         elif received_data.get('Type') == 3:
-            global last_welcome_time
-            global welcome_counter
+            pass
 
-            # 获取当前时间
-            current_time = datetime.datetime.now()
-
-            # 如果是第一个人或上一个欢迎时间距离现在超过一分钟，欢迎新观众
-            if welcome_counter < 2 or (last_welcome_time and (current_time - last_welcome_time).total_seconds() > 60):
-                welcome_content = "，来了"
-                data_dict = json.loads(received_data['Data'])
-                nickname = data_dict['User']['Nickname']
-                print("正在执行音频转换请求")
-                wav_data_PATH = request_and_save_wav("亲爱的" + nickname + welcome_content, "zh")
-                async_play_wav_windows(wav_data_PATH)
-
-                # 更新欢迎时间和计数器
-                last_welcome_time = current_time
-                welcome_counter += 1
+            # global last_welcome_time
+            # global welcome_counter
+            #
+            # # 获取当前时间
+            # current_time = datetime.datetime.now()
+            #
+            # # 如果是第一个人或上一个欢迎时间距离现在超过一分钟，欢迎新观众
+            # if welcome_counter < 2 or (last_welcome_time and (current_time - last_welcome_time).total_seconds() > 60):
+            #     welcome_content = "，来了"
+            #     data_dict = json.loads(received_data['Data'])
+            #     nickname = data_dict['User']['Nickname']
+            #     print("正在执行音频转换请求")
+            #     wav_data_PATH = request_and_save_wav("亲爱的" + nickname + welcome_content, "zh")
+            #     async_play_wav_windows(wav_data_PATH)
+            #
+            #     # 更新欢迎时间和计数器
+            #     last_welcome_time = current_time
+            #     welcome_counter += 1
 
 
     except json.JSONDecodeError:

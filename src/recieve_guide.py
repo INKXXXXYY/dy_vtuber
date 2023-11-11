@@ -1,6 +1,7 @@
 import json
 import time
 from src.test1 import get_answer
+from src.zhanan import process_request_flow
 from utils.get_random_audio import get_random_audio
 # from tarot_easy import get_final_answer, is_tarot_question, parse_answer, tarot_answer, transform_text
 
@@ -35,7 +36,7 @@ def extract_content(received_data):
     # 要写入的文本
     text = nickname + "   " + content
 
-    print("正在发送请求")
+    print("正在语音转换发送请求")
     wav_data_PATH=request_and_save_wav(content, "zh")
 
     async_play_wav_windows(wav_data_PATH)
@@ -57,8 +58,13 @@ def extract_content(received_data):
     if not flag:
 
 
-        result=get_answer(nickname,content)
+        # result=get_answer(nickname,content)
+        print("发送agent对话请求")
+        result = process_request_flow(content)
 
+        print("正在执行音频转换请求")
+        wav_data_PATH = request_and_save_wav(result, "zh", 1)
+        async_play_wav_windows(wav_data_PATH)
 
         # # 确定问题是否可以回答
         # response = is_tarot_question(content)
@@ -120,12 +126,6 @@ def extract_content(received_data):
         #     async_play_wav_windows("refuse_answer_wav\\0c2b3322-7545-11ee-80e9-0242ac110005.wav")
 
         #     print('error')
-
-        
-
-
-
-
 
 
     return content

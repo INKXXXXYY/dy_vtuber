@@ -1,7 +1,2 @@
 geng1.wav
-geng6.wav
-intro.wav
-geng2.wav
-geng8.wav
-geng9.wav
-geng5.wav
+geng4.wav
