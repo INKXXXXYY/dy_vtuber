@@ -13,7 +13,7 @@ def main(user_input):
 
     import zhipuai
 
-    zhipuai.api_key = "443193d35778f59bbe3ba39df82345c8.IhmBhwGbrSJLaxHn"
+    zhipuai.api_key = "您的API密钥"
     response = zhipuai.model_api.invoke(
         model="characterglm",
         # model="chatglm_turbo",
@@ -39,7 +39,8 @@ def main(user_input):
 
     # 假设的模型API详情，你需要替换为实际的API详情
     group_id = "1688987355385794"
-    api_key = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoidGFyb3RfYWdlbnQiLCJTdWJqZWN0SUQiOiIxNjg4OTg3MzU1ODUwODM2IiwiUGhvbmUiOiJNVGd3TWpVMk1qQXhORGM9IiwiR3JvdXBJRCI6IjE2ODg5ODczNTUzODU3OTQiLCJQYWdlTmFtZSI6IiIsIk1haWwiOiJwbUB2YW5nZW5nLmNvbSIsIkNyZWF0ZVRpbWUiOiIyMDIzLTEwLTMxIDExOjExOjA3IiwiaXNzIjoibWluaW1heCJ9.dlfFfSWnzaFas4-hLh0wU7_JEop9mV7J9D9gC6sJMiBqF119Dl7TXnPzK8hs8TN09_9ZVHF0VVW4zhFTmsbKeqkjhqt-WDp8ewZfZiZK3J-lpGccPEFT1o4eCkMHeB4ODyafgn6F4r3BQ5K7_oLSWInMG4OW50L-AswCUWmwHExKQMuAMhLb1r0KcZxuru779tOrG_hvTYN1DMEhmglZbb5yQPHa9Ru23EHqgX88otbLs0z9hD4z_f0JuGz9BRudnKqPaC2KwKWte7Dm24UQHJuv4SsZVootDXC9SFaSlkehFZqqQDSK6raUbBiE7_3TdvkNIfouCjLZ3QHc67HCbA"
+    api_key = "您的API密钥"
+
     url = "https://api.minimax.chat/v1/text/chatcompletion_pro?GroupId=" + group_id
 
     payload = {
@@ -92,8 +93,8 @@ if __name__ == "__main__":
 #
 # def do_request():
 #     url = "https://api.baichuan-ai.com/v1/chat"
-#     api_key = "a859383b355cfa0405cfc4550044d7ab"
-#     secret_key = "4PYtg9EJfRFArAd9o2mq8bFbHEI="
+#     api_key = "您的API密钥"
+#     secret_key = "secret_key"
 #
 #     data = {
 #         "model": "Baichuan2-53B",
